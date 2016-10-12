@@ -1,0 +1,27 @@
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Full Friends</title>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='index.css')}}">
+    </head>
+    <body>
+        <form action="/friends" method="post">
+            <label for="first_name">First Name:<input type="text" name="first_name"></label>
+            <label for="last_name">Last Name:<input type="text" name="last_name"></label>
+            <label for="occupation">Occupation:<input type="text" name="occupation"></label>
+            <input type="submit" name="submit" value="Add">
+        </form>
+
+        <h1>Friends!</h1>
+        <hr>
+        {%for i in friends%}
+            <form action="/friends/{{i['id']|safe}}/edit" method = "POST">
+                <p>{{i["first_name"]}} {{i["last_name"]}} {{i["occupation"]}}</p>
+                <input type="submit" value="Edit">
+            </form>
+        {%endfor%}
+        <hr>
+
+    </body>
+</html>

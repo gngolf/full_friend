@@ -1,0 +1,13 @@
+input{
+    display: inline-block;
+}
+
+form p{
+    display: inline-block;
+}
+
+form{
+    margin: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
